@@ -1,4 +1,4 @@
-package nickel.moonstone;
+package nickel.moonstone.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
