@@ -20,11 +20,7 @@ public class TestController {
 
     @RequestMapping("/test")
     public String index(Model model) {
-
-        System.out.println("★★★★★★★");
-        List<QiitaService.RandomValue> list = qiitaservice.Service();
-        System.out.println("★★★★★★★");
-        // System.out.println(qiitaservice.Service());
+        model.addAttribute("test", qiitaservice.Service());
         return "test";
     }
 }

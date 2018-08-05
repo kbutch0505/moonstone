@@ -10,15 +10,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import nickel.moonstone.service.User;
+// import nickel.moonstone.service.UserList;
+
 @Service
 public class QiitaService {
 
     private final RestTemplate rt = new RestTemplate();
 
-    private static final String url = "http://gturnquist-quoters.cfapps.io/api/random";
+    private static final String url = "https://qiita.com/api/v2/users/keb";
 
-    public List<RandomValue> Service() {
-        ResponseEntity<List<RandomValue>> response = rt.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<List<RandomValue>>() {});
+    public User Service() {
+        ResponseEntity<User> response = rt.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<User>() {});
         return response.getBody();
     }
 
