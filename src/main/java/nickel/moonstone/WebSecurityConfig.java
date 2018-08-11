@@ -29,7 +29,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
             // ログイン認証を行うパスを設定
             .authorizeRequests()
-                .antMatchers("/", "/test").permitAll()   // ルートは全ユーザがアクセス可能
+                .antMatchers("/").permitAll()   // ルートは全ユーザがアクセス可能
                 .anyRequest().authenticated()   // 他のURLは認証が必要
                 .and()
             // フォーム認証を有効化

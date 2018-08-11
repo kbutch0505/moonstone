@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <!-- <link rel="icon" href="../../../../favicon.ico"> -->
 
-    <title>chaitter top page</title>
+    <title>top page - chaitter</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" th:href="@{webjars/bootstrap/4.1.1/css/bootstrap.min.css}"></link>
@@ -19,44 +19,29 @@
   <body>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#">chaitter</a>
+      <a class="navbar-brand" href="#" th:href="@{/}">
+          <img src="../../assets/brand/cat.png" alt="" width="32" height="32">      
+      </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0" th:action="@{'/user'}" method="POST">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <form class="form-inline my-2 my-lg-0" th:action="@{'/user'}" method="GET">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="user">
+          <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button>
         </form>
-        <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="/login"><span class="text-white">Sign in</span></a>
+        <a class="btn btn-outline-success my-2 my-sm-0" href="/login"><span>Sign in</span></a>
       </div>
     </nav>
 
     <main role="main" class="container">
 
       <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        <h1>Built for developers</h1>
+        <p class="lead">GitHub is a development platform inspired by the way you work. From open source to business, you can host and review code, manage projects, and build software alongside millions of other developers. </p>
       </div>
 
     </main><!-- /.container -->
@@ -66,7 +51,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script th:src="@{webjars/jquery/3.3.1/dist/jquery.slim.min.js}" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script th:src="@{webjars/jquery/3.3.1/dist/jquery.slim.min.js}"><\/script>')</script>
-    <script th:src="@{webjars/bootstrap/4.1.3/site/code/4.1/assets/js/vendor/popper.min.js}"></script>
+    <script th:src="@{webjars/bootstrap/4.1.3/site/docs/4.1/assets/js/vendor/popper.min.js}"></script>
     <script th:src="@{webjars/bootstrap/4.1.3/dist/js/bootstrap.min.js}"></script>
   </body>
 </html>
