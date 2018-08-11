@@ -8,6 +8,7 @@ import org.springframework.core.ParameterizedTypeReference;
 import java.util.List;
 
 import nickel.moonstone.domain.service.User;
+import nickel.moonstone.domain.service.Item;
 
 @Service
 public class QiitaService {
@@ -16,17 +17,17 @@ public class QiitaService {
 
     public static final String baseurl = "https://qiita.com/api/v2";
 
-    public User getUser(String user) {
-      String url = baseurl + "/users/" + user;
-
-      ResponseEntity<User> response = rt.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<User>() {});
-      return response.getBody();
-    }
-
     public List<User> getUserList() {
       String url = baseurl + "/users";
 
       ResponseEntity<List<User>> response = rt.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<List<User>>() {});
+      return response.getBody();
+    }
+
+    public List<Item> getItemList(String user) {
+      String url = baseurl + "/users/" + user + "/items";
+
+      ResponseEntity<List<Item>> response = rt.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<List<Item>>() {});
       return response.getBody();
     }
 

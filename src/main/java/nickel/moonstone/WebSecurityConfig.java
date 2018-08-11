@@ -36,11 +36,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .formLogin()
                 .loginPage("/login")            // ログイン画面のURL
                 .permitAll()                    // 全ユーザのアクセスを許可する
-                .defaultSuccessUrl("/home", true)       // ログインが成功したときのURL
+                .defaultSuccessUrl("/user", true)       // ログインが成功したときのURL
                 .and()
             // ログアウト
             .logout()
-                .logoutSuccessUrl("/")     // ログアウト画面のURL
+                .logoutSuccessUrl("/login")     // ログアウト画面のURL
                 .permitAll();
     }
 
