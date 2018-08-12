@@ -1,11 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
 
     <title>Qiita User List - chaitter</title>
 
@@ -28,12 +25,13 @@
 
       <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
+          <li class="nav-link" th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</li>
         </ul>
         <form class="form-inline my-2 my-lg-0" th:action="@{'/item'}" method="GET">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="user">
           <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button>
         </form>
-        <form th:action="@{/logout}" method="post">
+        <form class="form-inline my-2 my-lg-0" th:action="@{/logout}" method="post">
           <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Sign Out"/>
         </form>
       </div>
@@ -41,14 +39,16 @@
 
     <div class="nav-scroller bg-white shadow-sm">
       <nav class="nav nav-underline">
-        <a class="nav-link active" href="#">Dashboard</a>
-        <p class="nav-link" th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</p>
+        <p class="nav-link" th:text="${weather.title}">wheater</p>
+        <p class="nav-link" th:text="${weather.forecasts[0].dateLabel}">dateLabel</p>
+        <p class="nav-link" th:text="${weather.forecasts[0].telop}">telop</p>
+        <img class="nav-link" th:src="${weather.forecasts[0].image.url}" height="48">
       </nav>
     </div>
 
     <main role="main" class="container">
       <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded shadow-sm">
-        <img class="mr-3" src="../../assets/brand/bootstrap-outline.svg" alt="" width="48" height="48">
+        <img src="../../assets/brand/bootstrap-outline.svg" alt="" width="48" height="48">
         <div class="lh-100">
           <h6 class="mb-0 text-white lh-100">chaitter</h6>
           <small>Since 2018</small>
