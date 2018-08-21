@@ -41,6 +41,36 @@
         <p class="lead"> Qiitaのユーザ一覧と検索したユーザの記事を参照するアプリ </p>
       </div>
 
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-primary">Todo</strong>
+              <ul>
+                <li class="card-text mb-auto">天気に温度を追加</li>
+                <li class="card-text mb-auto">天気の地点を選択可</li>
+                <li class="card-text mb-auto">itemの出力形式を整形</li>
+              </ul>
+            </div>
+            <img class="card-img-right flex-auto d-none d-lg-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-success">Design</strong>
+              <ul>
+                <li class="card-text mb-auto">dummy</li>
+                <li class="card-text mb-auto">dummy</li>
+                <li class="card-text mb-auto">dummy</li>
+              </ul>
+            </div>
+            <img class="card-img-right flex-auto d-none d-lg-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
+          </div>
+        </div>
+      </div>
+    </div>
+
     </main><!-- /.container -->
 
     <!-- Bootstrap core JavaScript
@@ -50,6 +80,14 @@
     <script>window.jQuery || document.write('<script th:src="@{webjars/jquery/3.3.1/dist/jquery.slim.min.js}"><\/script>')</script>
     <script th:src="@{webjars/bootstrap/4.1.3/site/docs/4.1/assets/js/vendor/popper.min.js}"></script>
     <script th:src="@{webjars/bootstrap/4.1.3/dist/js/bootstrap.min.js}"></script>
+    <script th:src="@{webjars/bootstrap/4.1.3/site/docs/4.1/assets/js/vendor/holder.min.js}"></script>  
+    <script>
+      Holder.addTheme('thumb', {
+        bg: '#55595c',
+        fg: '#eceeef',
+        text: 'Thumbnail'
+      });
+    </script>
   </body>
 </html>
 
