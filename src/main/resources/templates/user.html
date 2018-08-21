@@ -16,7 +16,7 @@
   <body class="bg-light">
 
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-      <a class="navbar-brand mr-auto mr-lg-0" href="#" th:href="@{/}">
+      <a class="navbar-brand mr-auto mr-lg-0" href="#" th:href="@{/user}">
           <img src="../../assets/brand/cat.png" alt="" width="32" height="32">      
       </a>
       <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
@@ -43,6 +43,7 @@
         <p class="nav-link" th:text="${weather.forecasts[0].dateLabel}">dateLabel</p>
         <p class="nav-link" th:text="${weather.forecasts[0].telop}">telop</p>
         <img class="nav-link" th:src="${weather.forecasts[0].image.url}" height="48">
+        <p class="nav-link">Copyright © <a th:text="${weather.copyright.provider[0].name}" th:href="${weather.copyright.provider[0].link}" target="_blank">copyright</a></p>
       </nav>
     </div>
 

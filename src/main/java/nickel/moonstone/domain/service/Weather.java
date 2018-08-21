@@ -6,6 +6,7 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Weather {
 
+  // Forcast
   public String title;
   public List<Forecasts> forecasts;
 
@@ -19,11 +20,16 @@ public class Weather {
     public String url;
   }
 
-  // public List<Copyright> copyright;
+  // Copyright
+  public Copyright copyright;
 
-  // public static class Copyright {
-  //   public String link;
-  //   public String name;
-  // }
+  public static class Copyright {
+    public List<Provider> provider;
+  }
+
+  public static class Provider {
+    public String link;
+    public String name;
+  }
 
 }
